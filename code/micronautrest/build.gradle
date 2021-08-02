@@ -1,0 +1,67 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "1.5.3" // extended version of io.micronaut.library, see https://github.com/micronaut-projects/micronaut-gradle-plugin
+}
+
+version = "0.1"
+group = "it.unipd.stage.sl"
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("it.unipd.stage.sl.*")
+    }
+}
+
+dependencies {
+    annotationProcessor("io.micronaut.data:micronaut-data-processor")
+    annotationProcessor("io.micronaut.jaxrs:micronaut-jaxrs-processor")
+    annotationProcessor("io.micronaut:micronaut-inject-java") // for native images
+    annotationProcessor("io.micronaut:micronaut-graal") // for native images
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut:micronaut-validation") // not "io.micronaut.beanvalidation:micronaut-hibernate-validator" as we don't require full compliance (?) https://docs.micronaut.io/latest/guide/index.html#beanValidation
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
+    implementation("io.micronaut.jaxrs:micronaut-jaxrs-server")
+	implementation("io.micronaut:micronaut-http-server-netty")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("javax.annotation:javax.annotation-api")
+    implementation("io.micronaut.flyway:micronaut-flyway") // necessary to seed data to db
+    runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("com.h2database:h2")
+    testAnnotationProcessor("io.micronaut.jaxrs:micronaut-jaxrs-processor")
+    compileOnly("org.graalvm.nativeimage:svm")
+    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testImplementation("io.micronaut.test:micronaut-test-junit5:2.3.7")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    implementation name: 'supportLib'
+}
+
+
+application {
+    mainClass.set("it.unipd.stage.sl.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+nativeImage {
+    args('--verbose')
+    imageName('micronautrest_native')
+}
+

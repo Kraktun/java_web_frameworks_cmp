@@ -1,0 +1,14 @@
+*.class
+*.log
+*.war
+*.nar
+*.ear
+*.tar.gz
+*.rar
+hs_err_pid*
+
+.gradle
+.idea
+build
+out
+__pycache__

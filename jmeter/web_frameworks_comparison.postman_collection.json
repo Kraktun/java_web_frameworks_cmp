@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "04303bac-6cf4-4ab5-933c-8b9a9990ee2d",
+		"name": "web_frameworks_comparison",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "chapter",
+					"item": [
+						{
+							"name": "create simple",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"123\",\r\n    \"title\": \"title1\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter"
+									]
+								},
+								"description": "post simple"
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get simple",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get starter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update starter",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/start?id=32",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"start"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "32"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update with starter",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"123\",\r\n    \"title\": \"title21\",\r\n    \"starter\": {\r\n        \"id\": 32\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update simple",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"123\",\r\n    \"title\": \"title21\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "event",
+					"item": [
+						{
+							"name": "get all by chapter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/event",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"event"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/event/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"event",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create simple",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"event1\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/event",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"event"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update simple",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"eventnew1\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/event/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"event",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete simple",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/event/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"event",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete force",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/event/1?force=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"event",
+										"1"
+									],
+									"query": [
+										{
+											"key": "force",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete cascade",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v2/chapter/1/event/1?cascade=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v2",
+										"chapter",
+										"1",
+										"event",
+										"1"
+									],
+									"query": [
+										{
+											"key": "cascade",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "RSA",
+			"item": [
+				{
+					"name": "get keys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/rsa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"rsa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "encrypt",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"abcd\",\r\n    \"publicKey\": {\r\n        \"n\": \"11916732686438453\",\r\n        \"e\":\"716857081457083\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/rsa/encrypt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"rsa",
+								"encrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get keys with params",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/rsa?length=54&seed=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"rsa"
+							],
+							"query": [
+								{
+									"key": "length",
+									"value": "54"
+								},
+								{
+									"key": "seed",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brute",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"n\": \"11916732686438453\",\r\n    \"e\": \"716857081457083\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/rsa/brute",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"rsa",
+								"brute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decrypt",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Gbmh1vhwmQ==\",\r\n    \"publicKey\": {\r\n        \"n\": \"11916732686438453\",\r\n        \"e\":\"716857081457083\"\r\n    },\r\n    \"privateKey\": {\r\n        \"n\": \"11916732686438453\",\r\n        \"d\": \"2117879153303347\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/rsa/decrypt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"rsa",
+								"decrypt"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

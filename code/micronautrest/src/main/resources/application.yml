@@ -1,0 +1,37 @@
+micronaut:
+  application:
+    name: micronautrest
+  server:
+    context-path: '/api/v2'
+  router:
+    static-resources: # no need for a separate controller
+      default:
+        paths: classpath:static # source files are in resources/static/
+        mapping: /static/** # navigate to /api/v2/static/
+        enabled: true
+
+# datasource configuration
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 'password'
+    schema-generate: CREATE_DROP
+    dialect: H2
+jpa:
+  default:
+    #packages-to-scan: #removed for native compilation compatibility
+    #  - 'it.unipd.stage.sl'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update # create tables according to entities
+        show_sql: false
+flyway:
+  enabled: true
+  datasources:
+    default:
+      enabled: false # manual migration or flyway starts before the db is actually created
+      baseline-on-migrate: true # necessary to let flyway know that it needs to initialize the db
+      locations: classpath:db/migration

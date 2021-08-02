@@ -1,0 +1,11 @@
+pluginManagement { // for native
+    repositories {
+        maven { url 'https://repo.spring.io/release' }
+        mavenCentral()
+        gradlePluginPortal()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+rootProject.name = 'springrest'

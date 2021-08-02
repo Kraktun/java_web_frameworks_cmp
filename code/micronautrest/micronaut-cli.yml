@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: it.unipd.stage.sl
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, data, data-jpa, data-r2dbc, graalvm, gradle, h2, hibernate-validator, http-client, java, java-application, jax-rs, jdbc-hikari, junit, logback, netty-server, r2dbc, readme, shade, yaml]
